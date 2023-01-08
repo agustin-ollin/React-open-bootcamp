@@ -4,15 +4,23 @@ import './App.css'
 import FGreeting from './components/pure/FGreeting'
 import TaskListComponent from './components/container/task_list'
 import ContactListComponent from './components/container/contact_list'
+import Ejemplo1 from './hooks/Ejemplo1'
+import Ejemplo2 from './hooks/Ejemplo2'
+import MiComponentConContexto from './hooks/Ejemplo3'
+import Ejemplo4 from './hooks/Ejemplo4'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <h1>Aplicacion de tareas</h1>
       {/*<TaskListComponent />*/}
-      <ContactListComponent />
+      {/* <ContactListComponent /> */}
+      {/* <Ejemplo2 /> */}
+      {/* <MiComponentConContexto /> */}
+      <Ejemplo4 name='ollin'>
+        <h3>Contenido del props,children</h3>
+      </Ejemplo4>
     </div>
   )
 }
