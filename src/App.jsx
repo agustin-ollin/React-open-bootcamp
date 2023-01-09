@@ -9,6 +9,7 @@ import Ejemplo2 from './hooks/Ejemplo2'
 import MiComponentConContexto from './hooks/Ejemplo3'
 import Ejemplo4 from './hooks/Ejemplo4'
 import GreetingStyled from './components/pure/greetingStyled'
+import Clock from './hooks/lifecycle/Clock'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,7 +23,8 @@ function App() {
       {/* <Ejemplo4 name='ollin'>
         <h3>Contenido del props,children</h3>
       </Ejemplo4> */}
-      <GreetingStyled name='Ollin' />
+      {/* <GreetingStyled name='Ollin' /> */}
+      <Clock />
     </div>
   )
 }

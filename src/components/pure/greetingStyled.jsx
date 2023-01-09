@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 // Definiendo estilos en constantes
 //Estilo para usuario logeado
 const loggedStyle = {
-  color: 'white',
+  color: 'green',
 }
 
 //Estilo para usuario no logeado
