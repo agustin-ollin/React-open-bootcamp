@@ -8,19 +8,21 @@ import Ejemplo1 from './hooks/Ejemplo1'
 import Ejemplo2 from './hooks/Ejemplo2'
 import MiComponentConContexto from './hooks/Ejemplo3'
 import Ejemplo4 from './hooks/Ejemplo4'
+import GreetingStyled from './components/pure/greetingStyled'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      {/*<TaskListComponent />*/}
+      {/* <TaskListComponent /> */}
       {/* <ContactListComponent /> */}
       {/* <Ejemplo2 /> */}
       {/* <MiComponentConContexto /> */}
-      <Ejemplo4 name='ollin'>
+      {/* <Ejemplo4 name='ollin'>
         <h3>Contenido del props,children</h3>
-      </Ejemplo4>
+      </Ejemplo4> */}
+      <GreetingStyled name='Ollin' />
     </div>
   )
 }

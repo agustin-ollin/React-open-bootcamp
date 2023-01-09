@@ -30,7 +30,7 @@ const TaskListComponent = () => {
 
   return (
     <div>
-      <div>Your Task:</div>
+      <h1>Your Task:</h1>
       <TaskComponent key={1} task={defaultTask} />
     </div>
   )
