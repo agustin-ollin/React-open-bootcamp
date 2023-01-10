@@ -1,33 +1,57 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { Contact } from '../../models/contact.class'
+import '../../styles/contact.scss'
 
-const ContactComponent = ({ contact }) => {
-  const [conected, setConected] = useState(contact.conected)
-
-  const changeConected = () => {
-    setConected(conected ? false : true)
-    contact.conected = contact.conected ? false : true
-  }
+const ContactComponent = ({ contact, conected, remove }) => {
+  const contactConected = () =>
+    contact.conected ? (
+      <h6 className="mb-0">
+        <span
+          onClick={() => conected(contact)}
+          className="badge bg-success contact-action"
+        >
+          ON
+        </span>
+      </h6>
+    ) : (
+      <h6 className="mb-0">
+        <span
+          onClick={() => conected(contact)}
+          className="badge bg-danger contact-action"
+        >
+          OFF
+        </span>
+      </h6>
+    )
 
   return (
-    <div>
-      <h3>{contact.name}</h3>
-      <h4>{contact.lastname}</h4>
-      <h5>{contact.email}</h5>
-      <div>
-        <button onClick={changeConected}>
-          {contact.conected
-            ? 'Contacto En Linea'
-            : 'Contacto No Disponible'}
-        </button>
-      </div>
-    </div>
+    <tr className="fw-normal">
+      <th>
+        <span>{contact.name}</span>
+      </th>
+      <td>
+        <span>{contact.lastname}</span>
+      </td>
+      <td>
+        <span>{contact.email}</span>
+      </td>
+      <td className="align-middle">
+        {contactConected()}
+        <i
+          onClick={() => remove(contact)}
+          className="bi-trash contact-action"
+          style={{ color: 'tomato' }}
+        ></i>
+      </td>
+    </tr>
   )
 }
 
 ContactComponent.propTypes = {
-  contact: PropTypes.instanceOf(Contact),
+  contact: PropTypes.instanceOf(Contact).isRequired,
+  conected: PropTypes.func.isRequired,
+  remove: PropTypes.func.isRequired,
 }
 
 export default ContactComponent

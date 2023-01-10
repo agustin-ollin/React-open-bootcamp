@@ -3,16 +3,32 @@ import PropTypes from 'prop-types'
 import { Task } from '../../models/task.class'
 import { LEVELS } from '../../models/levels.enum'
 import TaskComponent from '../pure/task'
+import TaskForm from '../pure/forms/taskForm'
 
 const TaskListComponent = () => {
-  const defaultTask = new Task(
-    'Example',
-    'Default Description',
-    false,
+  const defaultTask1 = new Task(
+    'Example1',
+    'Default Description 1',
+    true,
     LEVELS.NORMAL,
   )
 
-  const [tasks, setTasks] = useState([defaultTask])
+  const defaultTask2 = new Task(
+    'Example2',
+    'Default Description 2',
+    false,
+    LEVELS.URGENT,
+  )
+
+  const defaultTask3 = new Task(
+    'Example3',
+    'Default Description 3',
+    false,
+    LEVELS.BLOCKING,
+  )
+
+  const [tasks, setTasks] = useState([defaultTask1, defaultTask2, defaultTask3])
+
   const [loading, setLoading] = useState(true)
 
   // Control del ciclo de vida del componente
@@ -24,14 +40,64 @@ const TaskListComponent = () => {
     }
   }, [tasks])
 
-  const changeCompleted = () => {
-    console.log('TODO: Cambiar estado de una tarea')
+  const completedTask = (task) => {
+    const index = tasks.indexOf(task)
+    const tempTask = [...tasks]
+    tempTask[index].completed = !tempTask[index].completed
+    setTasks(tempTask)
+  }
+
+  const deleteTask = (task) => {
+    const index = tasks.indexOf(task)
+    const tempTask = [...tasks]
+    tempTask.splice(index, 1)
+    setTasks(tempTask)
+  }
+
+  const addTask = (task) => {
+    const index = tasks.indexOf(task)
+    const tempTask = [...tasks]
+    tempTask.push(task)
+    setTasks(tempTask)
   }
 
   return (
     <div>
-      <h1>Your Task:</h1>
-      <TaskComponent key={1} task={defaultTask} />
+      <div className="col-12">
+        <div className="card">
+          <div className="card-header p-3">
+            <h5>Your Task:</h5>
+          </div>
+
+          <div
+            className="card-body p-3"
+            data-mdb-perfect-scrollbar="true"
+            style={{ position: 'relative', height: '400px' }}
+          >
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Title</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Priority</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {tasks.map((task, index) => (
+                  <TaskComponent
+                    key={index}
+                    task={task}
+                    complete={completedTask}
+                    remove={deleteTask}
+                  />
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <TaskForm add={addTask} />
+      </div>
     </div>
   )
 }

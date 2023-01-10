@@ -10,21 +10,27 @@ import MiComponentConContexto from './hooks/Ejemplo3'
 import Ejemplo4 from './hooks/Ejemplo4'
 import GreetingStyled from './components/pure/greetingStyled'
 import Clock from './hooks/lifecycle/Clock'
+import Father from './components/container/father'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
+    <div>
+      {/* Proyecto Final */}
       {/* <TaskListComponent /> */}
-      {/* <ContactListComponent /> */}
+
+      <ContactListComponent />
       {/* <Ejemplo2 /> */}
       {/* <MiComponentConContexto /> */}
       {/* <Ejemplo4 name='ollin'>
         <h3>Contenido del props,children</h3>
       </Ejemplo4> */}
       {/* <GreetingStyled name='Ollin' /> */}
-      <Clock />
+      {/* <Clock /> */}
+
+      {/* Gestion de Eventos */}
+      {/* <Father /> */}
     </div>
   )
 }
