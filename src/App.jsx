@@ -11,6 +11,8 @@ import Ejemplo4 from './hooks/Ejemplo4'
 import GreetingStyled from './components/pure/greetingStyled'
 import Clock from './hooks/lifecycle/Clock'
 import Father from './components/container/father'
+import OptionalRender from './components/pure/optionalRender'
+import Square from './components/pure/square'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,7 +22,7 @@ function App() {
       {/* Proyecto Final */}
       {/* <TaskListComponent /> */}
 
-      <ContactListComponent />
+      {/* <ContactListComponent /> */}
       {/* <Ejemplo2 /> */}
       {/* <MiComponentConContexto /> */}
       {/* <Ejemplo4 name='ollin'>
@@ -31,6 +33,12 @@ function App() {
 
       {/* Gestion de Eventos */}
       {/* <Father /> */}
+
+      {/* Ejemplos de renderizado condicional */}
+      {/* <OptionalRender /> */}
+
+      {/* Ejercicios sesiones 10, 11 y 12 */}
+      <Square />
     </div>
   )
 }
