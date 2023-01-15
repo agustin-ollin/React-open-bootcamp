@@ -22,15 +22,17 @@ const Square = () => {
 
   const getRandom = (max) => Math.floor(Math.random() * max)
 
+  const changeColorRgb = () => {
+    setRgbObject({
+        red: getRandom(maxColorValue),
+        green: getRandom(maxColorValue),
+        blue: getRandom(maxColorValue),
+      })
+  }
+
   useEffect(() => {
     if (inSquare) {
-      const changeID = setInterval(() => {
-        setRgbObject({
-          red: getRandom(maxColorValue),
-          green: getRandom(maxColorValue),
-          blue: getRandom(maxColorValue),
-        })
-      }, 300)
+      const changeID = setInterval(changeColorRgb, 300)
 
       return () => {
         clearInterval(changeID)
