@@ -22,11 +22,11 @@ function App() {
   return (
     <div>
       {/* Proyecto Final */}
-      {/* <TaskListComponent /> */}
+      <TaskListComponent />
 
       {/* Ejemplos de uso de formik y yup */}
       {/* <LoginFormik/> */}
-      <RegisterFormik />
+      {/* <RegisterFormik /> */}
 
       {/* <ContactListComponent /> */}
       {/* <Ejemplo2 /> */}

@@ -4,6 +4,7 @@ import { Task } from '../../models/task.class'
 import { LEVELS } from '../../models/levels.enum'
 import TaskComponent from '../pure/task'
 import TaskForm from '../pure/forms/taskForm'
+import TaskFormik from '../pure/forms/taskFormik'
 
 const TaskListComponent = () => {
   const defaultTask1 = new Task(
@@ -115,7 +116,8 @@ const TaskListComponent = () => {
             {loading ? <p style={loadingStyle}>loading task...</p> : tasksTable}
           </div>
         </div>
-        <TaskForm lenght={tasks.length} add={addTask} />
+        {/* <TaskForm lenght={tasks.length} add={addTask} /> */}
+        <TaskFormik lenght={tasks.length} add={addTask} />
       </div>
     </div>
   )
