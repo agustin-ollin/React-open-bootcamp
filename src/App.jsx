@@ -13,6 +13,8 @@ import Clock from './hooks/lifecycle/Clock'
 import Father from './components/container/father'
 import OptionalRender from './components/pure/optionalRender'
 import Square from './components/pure/square'
+import LoginFormik from './components/pure/forms/loginFormik'
+import RegisterFormik from './components/pure/forms/registerFormik'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,6 +23,10 @@ function App() {
     <div>
       {/* Proyecto Final */}
       {/* <TaskListComponent /> */}
+
+      {/* Ejemplos de uso de formik y yup */}
+      {/* <LoginFormik/> */}
+      <RegisterFormik />
 
       {/* <ContactListComponent /> */}
       {/* <Ejemplo2 /> */}
@@ -38,7 +44,7 @@ function App() {
       {/* <OptionalRender /> */}
 
       {/* Ejercicios sesiones 10, 11 y 12 */}
-      <Square />
+      {/* <Square /> */}
     </div>
   )
 }
