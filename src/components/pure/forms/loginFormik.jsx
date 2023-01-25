@@ -1,5 +1,6 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import * as Yup from 'yup'
 
 const loginSchema = Yup.object().shape({
@@ -15,6 +16,8 @@ const LoginFormik = () => {
     password: '',
   }
 
+  const history = useNavigate()
+
   return (
     <div>
       <h4>Login Form</h4>
@@ -28,7 +31,8 @@ const LoginFormik = () => {
           await new Promise((r) => setTimeout(r, 1000))
           alert(JSON.stringify(values, null, 2))
           // We save data in localStorage
-          localStorage.setItem('credentials', values)
+          await localStorage.setItem('credentials', values)
+          history('/profile')
         }}
       >
         {/* We obtain props from Formik */}
