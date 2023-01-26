@@ -32,7 +32,7 @@ const LoginFormik = () => {
           alert(JSON.stringify(values, null, 2))
           // We save data in localStorage
           await localStorage.setItem('credentials', values)
-          history('/profile')
+          history('/tasks')
         }}
       >
         {/* We obtain props from Formik */}
