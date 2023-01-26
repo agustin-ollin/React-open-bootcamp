@@ -5,10 +5,12 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import './index.css'
 import App from './App'
 import AppRoutingOne from './AppRoutingOne'
+import AppRoutingFinal from './AppRoutingFinal'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* <App /> */}
-    <AppRoutingOne />
+    {/* <AppRoutingOne /> */}
+    <AppRoutingFinal />
   </React.StrictMode>,
 )
